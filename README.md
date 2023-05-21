@@ -2,8 +2,11 @@
 ## Тестовое задание в компанию Фьюче
 
 ### Для запуска: 
+
 `docker-compose up`
+
 ###Swagger
+
 `localhost:8000 - swagger`
 
 ###Тесты:

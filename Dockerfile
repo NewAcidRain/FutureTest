@@ -7,9 +7,8 @@ RUN set -ex \
     	&& docker-php-ext-install pdo pdo_pgsql
 
 RUN docker-php-ext-install opcache
-COPY ./docker/php-fpm/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+COPY /main/docker/php-fpm/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www
-
-
+CMD ["php", "artisan", "migrate", "&&", "php", "artisan", "db:seed", "NotebookSeeder"]
 WORKDIR /var/www/html

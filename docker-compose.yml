@@ -7,8 +7,6 @@ services:
   nginx:
     image: nginx:stable-alpine
     container_name: ${APP_NAME}_nginx
-    ports:
-      - "8000:80"
     links:
       - php
     volumes:
@@ -23,7 +21,7 @@ services:
   php:
     build:
       context: ..
-      dockerfile: ./main/Dockerfile
+      dockerfile: Dockerfile
     container_name: ${APP_NAME}_php
     volumes:
       - ./:/var/www/html

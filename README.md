@@ -4,7 +4,9 @@
 ### Для запуска: 
 
 `docker-compose up -d`
+
 `docker exec Laravel_php php artisan migrate`
+
 `docker exec Laravel_php php artisan db:seed NotebookSeeder`
 
 ### Swagger
